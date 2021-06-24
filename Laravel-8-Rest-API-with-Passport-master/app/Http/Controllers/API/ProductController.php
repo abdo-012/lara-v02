@@ -73,14 +73,14 @@ class ProductController extends BaseController
     {
         $input = $request->all();
 
-        $validator = Validator::make($input, [
-            'name' => 'required',
-            'detail' => 'required'
-        ]);
+        // $validator = Validator::make($input, [
+        //     'name' => 'required',
+        //     'detail' => 'required'
+        // ]);
 
-        if ($validator->fails()) {
-            return $this->sendError('Validation Error.', $validator->errors());
-        }
+        // if ($validator->fails()) {
+        //     return $this->sendError('Validation Error.', $validator->errors());
+        // }
 
         $product->name = $input['name'];
         $product->detail = $input['detail'];
@@ -98,7 +98,6 @@ class ProductController extends BaseController
     public function destroy(Product $product)
     {
         $product->delete();
-
         return $this->sendResponse([], 'Product deleted successfully.');
     }
 }
