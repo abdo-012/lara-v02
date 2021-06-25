@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\API\BaseController as BaseController;
 use App\Models\Product;
 use Validator;
+use Illuminate\Support\Str;
+
 use App\Http\Resources\Product as ProductResource;
 
 class ProductController extends BaseController
@@ -111,7 +113,7 @@ class ProductController extends BaseController
      */
     public function check()
     {
-        return response()->json(["succuess" => "200"]);
+        $var = Str::random(80 * 2);
+        return response()->json(["Token_generated_randomly" => $var]);
     }
-    
 }
