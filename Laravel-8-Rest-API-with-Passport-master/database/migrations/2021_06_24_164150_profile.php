@@ -13,7 +13,11 @@ class Profile extends Migration
      */
     public function up()
     {
-        //
+        Schema::create('profile', function (Blueprint $table) {
+            $table->id();
+            $table->string('image');
+            $table->text('phone');
+        });
     }
 
     /**
@@ -23,6 +27,6 @@ class Profile extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropIfExists('profile');
     }
 }

@@ -73,14 +73,14 @@ class ProductController extends BaseController
     {
         $input = $request->all();
 
-        // $validator = Validator::make($input, [
-        //     'name' => 'required',
-        //     'detail' => 'required'
-        // ]);
+        $validator = Validator::make($input, [
+            'name' => 'required',
+            'detail' => 'required'
+        ]);
 
-        // if ($validator->fails()) {
-        //     return $this->sendError('Validation Error.', $validator->errors());
-        // }
+        if ($validator->fails()) {
+            return $this->sendError('Validation Error.', $validator->errors());
+        }
 
         $product->name = $input['name'];
         $product->detail = $input['detail'];
@@ -98,6 +98,20 @@ class ProductController extends BaseController
     public function destroy(Product $product)
     {
         $product->delete();
-        return $this->sendResponse([], 'Product deleted successfully.');
+        if (is_null($product)) {
+            return $this->sendError('Product not found.');
+        } else {
+            return $this->sendResponse([], 'Product deleted successfully.');
+        }
     }
+    /**
+     * create fucntion test authentication on all route 
+     * function name = checkauth
+     * route Api/v01/
+     */
+    public function check()
+    {
+        return response()->json(["succuess" => "200"]);
+    }
+    
 }

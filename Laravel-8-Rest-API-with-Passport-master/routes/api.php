@@ -7,9 +7,9 @@ use App\Http\Controllers\API\RegisterController;
 use App\Http\Controllers\API\ProductController;
 
 /*
-|--------------------------------------------------------------------------
-| API Routes
-|--------------------------------------------------------------------------
+|-------------------------------------------------------------------------|
+| API Routes                                                              |
+|-------------------------------------------------------------------------|
 |
 | Here is where you can register API routes for your application. These
 | routes are loaded by the RouteServiceProvider within a group which
@@ -20,8 +20,9 @@ use App\Http\Controllers\API\ProductController;
 Route::post('register', [RegisterController::class, 'register']);
 Route::post('login', [RegisterController::class, 'login']);
 
-Route::middleware('auth:api')->group( function () {
+Route::middleware('auth:api')->group(function () {
     Route::resource('products', ProductController::class);
+    Route::get('v01', [ProductController::class,'check']);
 });
 
 Route::middleware('auth:api')->get('/user', function (Request $request) {

@@ -1,0 +1,3 @@
+https://www.remotestack.io/laravel-login-with-facebook-using-laravel-socialite/
+
+https://www.itsolutionstuff.com/post/laravel-56-login-with-facebook-with-socialiteexample.html
