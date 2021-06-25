@@ -55,29 +55,29 @@ class RegisterController extends BaseController
         }
     }
     // 
-    public function facebookSignin()
-    {
-        try {
+    // public function facebookSignin()
+    // {
+    //     try {
 
-            $user = Socialite::driver('facebook')->user();
-            $facebookId = User::where('facebook_id', $user->id)->first();
+    //         $user = Socialite::driver('facebook')->user();
+    //         $facebookId = User::where('facebook_id', $user->id)->first();
 
-            if ($facebookId) {
-                Auth::login($facebookId);
-                return redirect('/dashboard');
-            } else {
-                $createUser = User::create([
-                    'name' => $user->name,
-                    'email' => $user->email,
-                    'facebook_id' => $user->id,
-                    'password' => encrypt('john123')
-                ]);
+    //         if ($facebookId) {
+    //             Auth::login($facebookId);
+    //             return redirect('/dashboard');
+    //         } else {
+    //             $createUser = User::create([
+    //                 'name' => $user->name,
+    //                 'email' => $user->email,
+    //                 'facebook_id' => $user->id,
+    //                 'password' => encrypt('john123')
+    //             ]);
 
-                Auth::login($createUser);
-                return redirect('/dashboard');
-            }
-        } catch (Exception $exception) {
-            dd($exception->getMessage());
-        }
-    }
+    //             Auth::login($createUser);
+    //             return redirect('/dashboard');
+    //         }
+    //     } catch (Exception $exception) {
+    //         dd($exception->getMessage());
+    //     }
+    // }
 }
