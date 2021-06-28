@@ -60,8 +60,8 @@ class ProductController extends BaseController
         if (is_null($product)) {
             return $this->sendError('Product not found.');
         }
-
-        return $this->sendResponse(new ProductResource($product), 'Product retrieved successfully.');
+        return response()->json(["flow" => $product]);
+        // return $this->sendResponse(new ProductResource($product), 'Product retrieved successfully.');
     }
 
     /**

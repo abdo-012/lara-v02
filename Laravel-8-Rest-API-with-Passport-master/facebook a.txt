@@ -1,3 +1,4 @@
 https://www.remotestack.io/laravel-login-with-facebook-using-laravel-socialite/
 https://www.toptal.com/laravel/restful-laravel-api-tutorial
 https://www.itsolutionstuff.com/post/laravel-56-login-with-facebook-with-socialiteexample.html
+https://stackoverflow.com/questions/37051269/laravel-5-api-authorization-for-mobile-applications-which-uses-facebook-for-auth
