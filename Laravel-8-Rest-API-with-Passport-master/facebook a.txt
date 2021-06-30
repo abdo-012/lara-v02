@@ -3,6 +3,6 @@ https://www.toptal.com/laravel/restful-laravel-api-tutorial
 
 
 
-
+https://kaloraat.com/articles/how-to-deploy-laravel-to-digital-ocean
 https://www.itsolutionstuff.com/post/laravel-56-login-with-facebook-with-socialiteexample.html
 https://stackoverflow.com/questions/37051269/laravel-5-api-authorization-for-mobile-applications-which-uses-facebook-for-auth
